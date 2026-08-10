@@ -1,9 +1,11 @@
 # --- Session credentials: never publish ---------------------------------
 # Root-Me Pro platform cookies (security_authentication=...) and raw response
 # headers containing set-cookie. These authenticate MY account, not the target.
-cookies.txt
-headers.txt
+*cookies.txt
+*headers.txt
 *token*.txt
+# Saved authenticated pages that embed a security_authentication cookie
+root-me-pro/soc-ad-kerberoasting/page.html
 
 # --- Challenge artefacts: kept locally, too large / not useful in git ----
 files/
