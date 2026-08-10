@@ -1,6 +1,6 @@
 # CTF archive — Root-Me / Root-Me Pro
 
-29 challenges. **21 with full writeups**, 8 notes-only, 0 work-in-progress.
+31 challenges. **24 with full writeups**, 7 notes-only, 0 work-in-progress.
 
 Each folder holds `notes.md` (running log), `writeup.md` (final self-contained writeup),
 and any `solve.py` / helper scripts. Where a challenge was solved across several sessions
@@ -16,10 +16,12 @@ writeup for how to regenerate them.
 | [`api-mass-assignment`](root-me-pro/api-mass-assignment/) | ✅ done | Web | 200 |
 | [`ble-2fa-bypass`](root-me-pro/ble-2fa-bypass/) | ✅ done | Web | 450 |
 | [`disk-analysis-windows-registers`](root-me-pro/disk-analysis-windows-registers/) | ✅ done | Forensic |  |
+| [`docker-privileged`](root-me-pro/docker-privileged/) | ✅ done | System | 200 |
 | [`docker-socket`](root-me-pro/docker-socket/) | ✅ done | Soc |  |
 | [`encryption-known-plaintext2`](root-me-pro/encryption-known-plaintext2/) | ✅ done | cryption | 150 |
 | [`encryption-symmetric-bf`](root-me-pro/encryption-symmetric-bf/) | ✅ done | cryption |  |
 | [`linux-privesc-crontab`](root-me-pro/linux-privesc-crontab/) | ✅ done | Privesc |  |
+| [`linux-privesc-cve`](root-me-pro/linux-privesc-cve/) | ✅ done | System | 250 |
 | [`linux-privesc-module-hijacking`](root-me-pro/linux-privesc-module-hijacking/) | ✅ done | Privesc | 300 |
 | [`protocol-smtp-analyze`](root-me-pro/protocol-smtp-analyze/) | 📝 notes only | Network | 200 |
 | [`ram-analysis-linux-network`](root-me-pro/ram-analysis-linux-network/) | ✅ done | Network | 200 |
@@ -37,7 +39,7 @@ writeup for how to regenerate them.
 | [`sql-injection-error`](root-me-pro/sql-injection-error/) | ✅ done | Web | 400 |
 | [`ssti-python-filter-bypass`](root-me-pro/ssti-python-filter-bypass/) | ✅ done | Web | 450 |
 | [`ssti-python-introduction`](root-me-pro/ssti-python-introduction/) | ✅ done | Web | 300 |
-| [`web-cache-poisoning-unkeyed-header`](root-me-pro/web-cache-poisoning-unkeyed-header/) | 📝 notes only | Web | 250 |
+| [`web-cache-poisoning-unkeyed-header`](root-me-pro/web-cache-poisoning-unkeyed-header/) | ✅ done | Web | 250 |
 | [`xss-reflected-uri`](root-me-pro/xss-reflected-uri/) | ✅ done | Web |  |
 
 ## Root-Me
