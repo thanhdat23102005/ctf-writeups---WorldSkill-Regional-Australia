@@ -1,6 +1,6 @@
 # CTF archive — Root-Me / Root-Me Pro
 
-25 challenges. **15 with full writeups**, 8 notes-only, 2 work-in-progress.
+27 challenges. **17 with full writeups**, 8 notes-only, 2 work-in-progress.
 
 Each folder holds `notes.md` (running log), `writeup.md` (final self-contained writeup),
 and any `solve.py` / helper scripts. Large artefacts (pcaps, memory dumps, disk images)
@@ -39,6 +39,8 @@ and platform session cookies are gitignored — see each writeup for how to rege
 
 | Challenge | Status | Category | Pts |
 |---|---|---|---|
+| [`ch2-command-control-2`](root-me/ch2-command-control-2/) | ✅ done | Forensic |  |
+| [`ch39-deleted-file`](root-me/ch39-deleted-file/) | ✅ done | Forensic |  |
 | [`xss-reflected-uri`](root-me/xss-reflected-uri/) | 📝 notes only | Web | 450 |
 
 ---
