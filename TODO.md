@@ -16,12 +16,12 @@
 - [ ] root-me-pro/soc-web-injection-sql
 - [ ] root-me-pro/sql-injection-error (has writeup; second session notes to fold in)
 - [ ] root-me/protocol-smtp-analyze
-- [ ] root-me/xss-reflected-uri
+- [ ] root-me/xss-reflected-uri (two sessions of notes, no writeup yet)
 
 ## In progress
 
 - [ ] root-me-pro/ssti-python-filter-bypass — scripts only, no notes yet
-- [ ] root-me-pro/ssti-python-introduction — scripts only, no notes yet
+- [x] root-me-pro/ssti-python-introduction — done
 - [ ] root-me-pro/disk-analysis-windows-registers — files extracted, nothing written
 
 ## Housekeeping

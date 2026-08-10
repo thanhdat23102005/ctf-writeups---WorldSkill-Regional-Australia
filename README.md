@@ -1,16 +1,19 @@
 # CTF archive — Root-Me / Root-Me Pro
 
-27 challenges. **17 with full writeups**, 8 notes-only, 2 work-in-progress.
+28 challenges. **19 with full writeups**, 8 notes-only, 1 work-in-progress.
 
 Each folder holds `notes.md` (running log), `writeup.md` (final self-contained writeup),
-and any `solve.py` / helper scripts. Large artefacts (pcaps, memory dumps, disk images)
-and platform session cookies are gitignored — see each writeup for how to regenerate them.
+and any `solve.py` / helper scripts. Where a challenge was solved across two sessions the
+second is kept as `notes-session2.md` / `solve-session2.py`. Large artefacts (pcaps, memory
+dumps, disk images) and platform session cookies are gitignored — see each writeup for how
+to regenerate them.
 
 ## Root-Me Pro
 
 | Challenge | Status | Category | Pts |
 |---|---|---|---|
 | [`analyse-pcap-iot-rtp-video-capture`](root-me-pro/analyse-pcap-iot-rtp-video-capture/) | 📝 notes only | Network | 500 |
+| [`api-mass-assignment`](root-me-pro/api-mass-assignment/) | ✅ done | Web | 200 |
 | [`ble-2fa-bypass`](root-me-pro/ble-2fa-bypass/) | ✅ done | Web | 450 |
 | [`disk-analysis-windows-registers`](root-me-pro/disk-analysis-windows-registers/) | 🚧 WIP |  |  |
 | [`docker-socket`](root-me-pro/docker-socket/) | ✅ done | Soc |  |
@@ -33,7 +36,7 @@ and platform session cookies are gitignored — see each writeup for how to rege
 | [`soc-web-injection-sql`](root-me-pro/soc-web-injection-sql/) | 📝 notes only | SOC | 200 |
 | [`sql-injection-error`](root-me-pro/sql-injection-error/) | ✅ done | Web | 400 |
 | [`ssti-python-filter-bypass`](root-me-pro/ssti-python-filter-bypass/) | ✅ done | Web | 450 |
-| [`ssti-python-introduction`](root-me-pro/ssti-python-introduction/) | 🚧 WIP |  |  |
+| [`ssti-python-introduction`](root-me-pro/ssti-python-introduction/) | ✅ done | Web | 300 |
 
 ## Root-Me
 
