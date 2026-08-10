@@ -1,0 +1,4 @@
+# Large challenge artifacts — over GitHub's 100 MB per-file limit.
+# Re-download and rebuild with files/fetch.sh
+files/ch2.tbz2
+files/ch2.dmp
