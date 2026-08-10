@@ -1,12 +1,12 @@
 # CTF archive — Root-Me / Root-Me Pro
 
-30 challenges. **20 with full writeups**, 9 notes-only, 1 work-in-progress.
+29 challenges. **21 with full writeups**, 8 notes-only, 0 work-in-progress.
 
 Each folder holds `notes.md` (running log), `writeup.md` (final self-contained writeup),
-and any `solve.py` / helper scripts. Where a challenge was solved across two sessions the
-second is kept as `notes-session2.md` / `solve-session2.py`. Large artefacts (pcaps, memory
-dumps, disk images) and platform session cookies are gitignored — see each writeup for how
-to regenerate them.
+and any `solve.py` / helper scripts. Where a challenge was solved across several sessions
+the earlier ones are kept as `notes-attempt1.md` / `notes-attempt2.md`. Large artefacts
+(pcaps, memory dumps, disk images) and platform session cookies are gitignored — see each
+writeup for how to regenerate them.
 
 ## Root-Me Pro
 
@@ -37,8 +37,8 @@ to regenerate them.
 | [`sql-injection-error`](root-me-pro/sql-injection-error/) | ✅ done | Web | 400 |
 | [`ssti-python-filter-bypass`](root-me-pro/ssti-python-filter-bypass/) | ✅ done | Web | 450 |
 | [`ssti-python-introduction`](root-me-pro/ssti-python-introduction/) | ✅ done | Web | 300 |
-| [`web-cache-poisoning-unkeyed-header`](root-me-pro/web-cache-poisoning-unkeyed-header/) | 🚧 WIP |  |  |
-| [`xss-reflected-uri`](root-me-pro/xss-reflected-uri/) | 📝 notes only | Web | 450 |
+| [`web-cache-poisoning-unkeyed-header`](root-me-pro/web-cache-poisoning-unkeyed-header/) | 📝 notes only | Web | 250 |
+| [`xss-reflected-uri`](root-me-pro/xss-reflected-uri/) | ✅ done | Web |  |
 
 ## Root-Me
 
@@ -46,7 +46,6 @@ to regenerate them.
 |---|---|---|---|
 | [`ch2-command-control-2`](root-me/ch2-command-control-2/) | ✅ done | Forensic |  |
 | [`ch39-deleted-file`](root-me/ch39-deleted-file/) | ✅ done | Forensic |  |
-| [`xss-reflected-uri`](root-me/xss-reflected-uri/) | 📝 notes only | Web | 450 |
 
 ---
 

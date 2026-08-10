@@ -16,7 +16,7 @@
 - [ ] root-me-pro/soc-web-injection-sql
 - [ ] root-me-pro/sql-injection-error (has writeup; second session notes to fold in)
 - [ ] root-me-pro/protocol-smtp-analyze
-- [ ] root-me/xss-reflected-uri (two sessions of notes, no writeup yet)
+- [x] root-me-pro/xss-reflected-uri — done (three sessions consolidated)
 
 ## In progress
 
