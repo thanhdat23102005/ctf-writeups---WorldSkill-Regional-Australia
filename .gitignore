@@ -1,0 +1,28 @@
+# --- Session credentials: never publish ---------------------------------
+# Root-Me Pro platform cookies (security_authentication=...) and raw response
+# headers containing set-cookie. These authenticate MY account, not the target.
+cookies.txt
+headers.txt
+*token*.txt
+
+# --- Challenge artefacts: kept locally, too large / not useful in git ----
+files/
+dump/
+frames/
+extracted/
+exported/
+
+# --- Big binaries -------------------------------------------------------
+*.pcap
+*.pcapng
+*.dmp
+*.dat
+*.img
+*.bin
+*.zip
+*.gz
+*.kdbx
+
+# --- Python noise -------------------------------------------------------
+__pycache__/
+*.pyc

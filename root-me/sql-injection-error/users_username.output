@@ -1,0 +1,9 @@
+[*] 4 rows in users.username
+  ['t']  ['th']  ['the']  ['theo']
+[+] users.username[0] = theo
+  ['t']  ['to']  ['ton']  ['tony']
+[+] users.username[1] = tony
+  ['r']  ['ra']  ['rac']  ['rach']  ['rache']  ['rachel']
+[+] users.username[2] = rachel
+  ['a']  ['ad']  ['adm']  ['admi']  ['admin']
+[+] users.username[3] = admin

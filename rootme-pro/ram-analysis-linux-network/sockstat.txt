@@ -1,0 +1,81 @@
+Volatility 3 Framework 2.28.0
+
+NetNS	Process Name	PID	TID	FD	Sock Offset	Family	Type	Proto	Source Addr	Source Port	Destination Addr	Destination Port	State	Filter
+
+4026531840	systemd	1	1	21	0x8dc37ca75000	AF_NETLINK	RAW	NETLINK_KOBJECT_UEVENT	groups:0x00000002	1	group:0x00000000	0	UNCONNECTED	filter_type=socket_filter,bpf_filter_type=cBPF
+4026531840	systemd	1	1	22	0x8dc306e3e000	AF_UNIX	DGRAM	-	/run/systemd/notify	5648	-	-	UNCONNECTED	-
+4026531840	systemd	1	1	23	0x8dc306e3dc00	AF_UNIX	DGRAM	-	-	5649	-	5650	CONNECTED	-
+4026531840	systemd	1	1	24	0x8dc306e3c000	AF_UNIX	DGRAM	-	-	5650	-	5649	CONNECTED	-
+4026531840	systemd	1	1	25	0x8dc306e3f400	AF_UNIX	DGRAM	-	-	5651	-	5652	CONNECTED	-
+4026531840	systemd	1	1	26	0x8dc306e3fc00	AF_UNIX	DGRAM	-	-	5652	-	5651	CONNECTED	-
+4026531840	systemd	1	1	27	0x8dc306e3d400	AF_UNIX	DGRAM	-	-	5653	-	5654	CONNECTED	-
+4026531840	systemd	1	1	28	0x8dc306e3cc00	AF_UNIX	DGRAM	-	-	5654	-	5653	CONNECTED	-
+4026531840	systemd	1	1	29	0x8dc306e3c800	AF_UNIX	STREAM	-	/run/systemd/private	5655	-	-	LISTEN	-
+4026531840	systemd	1	1	30	0x8dc306e3d800	AF_UNIX	STREAM	-	/run/systemd/userdb/io.systemd.DynamicUser	5656	-	-	LISTEN	-
+4026531840	systemd	1	1	31	0x8dc306e3f000	AF_UNIX	STREAM	-	/run/systemd/io.systemd.ManagedOOM	5657	-	-	LISTEN	-
+4026531840	systemd	1	1	36	0x8dc37ca74000	AF_NETLINK	RAW	NETLINK_NETFILTER	-	1	group:0x00000000,lkm:nfnetlink	0	UNCONNECTED	-
+4026531840	systemd	1	1	37	0x8dc30322e400	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	10552	-	9540	ESTABLISHED	-
+4026531840	systemd	1	1	42	0x8dc306e3ec00	AF_UNIX	STREAM	-	/run/systemd/io.systemd.Credentials	5669	-	-	LISTEN	-
+4026531840	systemd	1	1	44	0x8dc306e3c400	AF_UNIX	DGRAM	-	/run/systemd/journal/dev-log	5670	-	-	UNCONNECTED	-
+4026531840	systemd	1	1	45	0x8dc306e3e800	AF_UNIX	DGRAM	-	/run/systemd/journal/socket	5671	-	-	UNCONNECTED	-
+4026531840	systemd	1	1	46	0x8dc306e3d000	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	5672	-	-	LISTEN	-
+4026531840	systemd	1	1	47	0x8dc306e3f800	AF_UNIX	SEQPACKET	-	/run/udev/control	5673	-	-	UNCONNECTED	-
+4026531840	systemd	1	1	48	0x8dc307423000	AF_NETLINK	RAW	NETLINK_KOBJECT_UEVENT	groups:0x00000001	3574468131	group:0x00000000	0	UNCONNECTED	-
+4026531840	systemd	1	1	49	0x8dc333805800	AF_NETLINK	RAW	NETLINK_AUDIT	-	1	group:0x00000000	0	UNCONNECTED	-
+4026531840	systemd	1	1	52	0x8dc33423a800	AF_UNIX	DGRAM	-	-	6404	/run/systemd/journal/socket	5671	UNCONNECTED	-
+4026531840	systemd	1	1	54	0x8dc303279400	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	6477	-	5972	ESTABLISHED	-
+4026531840	systemd	1	1	55	0x8dc33423ac00	AF_UNIX	STREAM	-	/run/systemd/io.systemd.sysext	6898	-	-	LISTEN	-
+4026531840	systemd	1	1	57	0x8dc33423a400	AF_UNIX	STREAM	-	/run/dbus/system_bus_socket	9020	-	-	LISTEN	-
+4026531840	systemd	1	1	58	0x8dc334239000	AF_UNIX	STREAM	-	/run/ssh-unix-local/socket	9021	-	-	LISTEN	-
+4026531840	systemd	1	1	59	0x8dc3023d6800	AF_VSOCK	STREAM	-	-	-	-	-	UNCONNECTED	-
+4026531840	systemd	1	1	61	0x8dc334238000	AF_UNIX	STREAM	-	/run/systemd/io.systemd.Hostname	9023	-	-	LISTEN	-
+4026531840	systemd	1	1	72	0x8dc3023c4000	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	9369	-	10388	ESTABLISHED	-
+4026531840	systemd	1	1	83	0x8dc302d19000	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	9234	-	9224	ESTABLISHED	-
+4026531840	systemd	1	1	87	0x8dc36d3cd800	AF_NETLINK	RAW	NETLINK_ROUTE	groups:0x800405dd	1	group:0x00000000	0	UNCONNECTED	filter_type=socket_filter,bpf_filter_type=cBPF
+4026531840	systemd	1	1	90	0x8dc30327ac00	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	9061	-	8065	ESTABLISHED	-
+4026531840	systemd	1	1	92	0x8dc37c258c00	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	8133	-	9153	ESTABLISHED	-
+4026531840	systemd	1	1	95	0x8dc303b2b400	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	12236	-	13120	ESTABLISHED	-
+4026531840	systemd	1	1	96	0x8dc302d19400	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	8136	-	8125	ESTABLISHED	-
+4026531840	systemd	1	1	98	0x8dc3023c6c00	AF_UNIX	STREAM	-		9207	/run/dbus/system_bus_socket	9210	ESTABLISHED	-
+4026531840	systemd	1	1	102	0x8dc302d1ac00	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	9261	-	9260	ESTABLISHED	-
+4026531840	systemd-journal	394	394	3	0x8dc306e3e800	AF_UNIX	DGRAM	-	/run/systemd/journal/socket	5671	-	-	UNCONNECTED	-
+4026531840	systemd-journal	394	394	4	0x8dc306e3d000	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	5672	-	-	LISTEN	-
+4026531840	systemd-journal	394	394	5	0x8dc306e3c400	AF_UNIX	DGRAM	-	/run/systemd/journal/dev-log	5670	-	-	UNCONNECTED	-
+4026531840	systemd-journal	394	394	9	0x8dc303279c00	AF_UNIX	STREAM	-	/run/systemd/journal/io.systemd.journal	5826	-	-	LISTEN	-
+4026531840	systemd-journal	394	394	14	0x8dc30327a000	AF_UNIX	DGRAM	-	-	5829	/run/systemd/notify	5648	UNCONNECTED	-
+4026531840	systemd-journal	394	394	17	0x8dc30322e400	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	10552	-	9540	ESTABLISHED	-
+4026531840	systemd-journal	394	394	18	0x8dc3023c4000	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	9369	-	10388	ESTABLISHED	-
+4026531840	systemd-journal	394	394	19	0x8dc30327ac00	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	9061	-	8065	ESTABLISHED	-
+4026531840	systemd-journal	394	394	20	0x8dc303279400	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	6477	-	5972	ESTABLISHED	-
+4026531840	systemd-journal	394	394	21	0x8dc37c258c00	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	8133	-	9153	ESTABLISHED	-
+4026531840	systemd-journal	394	394	24	0x8dc302d19000	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	9234	-	9224	ESTABLISHED	-
+4026531840	systemd-journal	394	394	25	0x8dc302d19400	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	8136	-	8125	ESTABLISHED	-
+4026531840	systemd-journal	394	394	26	0x8dc303b2b400	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	12236	-	13120	ESTABLISHED	-
+4026531840	systemd-journal	394	394	27	0x8dc302d1ac00	AF_UNIX	STREAM	-	/run/systemd/journal/stdout	9261	-	9260	ESTABLISHED	-
+4026531840	systemd-udevd	441	441	1	0x8dc303278c00	AF_UNIX	STREAM	-	-	5972	/run/systemd/journal/stdout	6477	ESTABLISHED	-
+4026531840	systemd-udevd	441	441	2	0x8dc303278c00	AF_UNIX	STREAM	-	-	5972	/run/systemd/journal/stdout	6477	ESTABLISHED	-
+4026531840	systemd-udevd	441	441	3	0x8dc307423000	AF_NETLINK	RAW	NETLINK_KOBJECT_UEVENT	groups:0x00000001	3574468131	group:0x00000000	0	UNCONNECTED	-
+4026531840	systemd-udevd	441	441	4	0x8dc306e3f800	AF_UNIX	SEQPACKET	-	/run/udev/control	5673	-	-	UNCONNECTED	-
+4026531840	systemd-udevd	441	441	5	0x8dc303278800	AF_UNIX	DGRAM	-	-	5981	/run/systemd/journal/socket	5671	UNCONNECTED	-
+4026531840	systemd-udevd	441	441	6	0x8dc303279800	AF_UNIX	DGRAM	-	-	5982	-	5983	CONNECTED	-
+4026531840	systemd-udevd	441	441	7	0x8dc30327b000	AF_UNIX	DGRAM	-	-	5983	-	5982	CONNECTED	-
+4026531840	cron	778	778	1	0x8dc30327b400	AF_UNIX	STREAM	-	-	8065	/run/systemd/journal/stdout	9061	ESTABLISHED	-
+4026531840	cron	778	778	2	0x8dc30327b400	AF_UNIX	STREAM	-	-	8065	/run/systemd/journal/stdout	9061	ESTABLISHED	-
+4026531840	cron	778	778	4	0x8dc303278400	AF_UNIX	DGRAM	-	-	8066	/run/systemd/journal/dev-log	5670	UNCONNECTED	-
+4026531840	dbus-daemon	779	779	1	0x8dc37c258800	AF_UNIX	STREAM	-	-	9153	/run/systemd/journal/stdout	8133	ESTABLISHED	-
+4026531840	dbus-daemon	779	779	2	0x8dc37c258800	AF_UNIX	STREAM	-	-	9153	/run/systemd/journal/stdout	8133	ESTABLISHED	-
+4026531840	dbus-daemon	779	779	3	0x8dc33423a400	AF_UNIX	STREAM	-	/run/dbus/system_bus_socket	9020	-	-	LISTEN	-
+4026531840	dbus-daemon	779	779	5	0x8dc37d166000	AF_NETLINK	RAW	NETLINK_AUDIT	-	0	group:0x00000000	0	UNCONNECTED	-
+4026531840	dbus-daemon	779	779	7	0x8dc3023c5800	AF_UNIX	STREAM	-	-	9199	-	9200	ESTABLISHED	-
+4026531840	dbus-daemon	779	779	8	0x8dc3023c7000	AF_UNIX	STREAM	-	-	9200	-	9199	ESTABLISHED	-
+4026531840	dbus-daemon	779	779	9	0x8dc302d1a400	AF_UNIX	STREAM	-	/run/dbus/system_bus_socket	9202		9220	ESTABLISHED	-
+4026531840	dbus-daemon	779	779	13	0x8dc3023c4400	AF_UNIX	STREAM	-	/run/dbus/system_bus_socket	9210		9207	ESTABLISHED	-
+4026531840	dbus-daemon	779	779	18	0x8dc3023c6800	AF_UNIX	DGRAM	-	-	10263	/run/systemd/journal/dev-log	5670	UNCONNECTED	-
+4026531840	dbus-daemon	779	779	20	0x8dc303b29800	AF_UNIX	STREAM	-	/run/dbus/system_bus_socket	12240		13149	ESTABLISHED	-
+4026531840	dbus-daemon	779	779	24	0x8dc302d19800	AF_UNIX	STREAM	-	/run/dbus/system_bus_socket	10572		9601	ESTABLISHED	-
+4026531840	systemd-logind	797	797	1	0x8dc302d18800	AF_UNIX	STREAM	-	-	8125	/run/systemd/journal/stdout	8136	ESTABLISHED	-
+4026531840	systemd-logind	797	797	2	0x8dc302d18800	AF_UNIX	STREAM	-	-	8125	/run/systemd/journal/stdout	8136	ESTABLISHED	-
+4026531840	systemd-logind	797	797	3	0x8dc302d1bc00	AF_UNIX	DGRAM	-	-	8185	/run/systemd/journal/socket	5671	UNCONNECTED	-
+4026531840	systemd-logind	797	797	9	0x8dc37d16b800	AF_NETLINK	RAW	NETLINK_KOBJECT_UEVENT	groups:0x00000002	797	group:0x00000000	0	UNCONNECTED	filter_type=socket_filter,bpf_filter_type=cBPF
+4026531840	systemd-logind	797	797	10	0x8dc37d16d000	AF_NETLINK	RAW	NETLINK_KOBJECT_UEVENT	groups:0x00000002	3755236040	group:0x00000000	0	UNCONNECTED	filter_type=socket_filter,bpf_filter_type=cBPF
+4026531840	systemd-logind	797	797	11	0x8dc37d168800	AF_NETLINK	RAW	NETLINK_KOBJECT_UEVENT	groups:0x00000002	3223265050	group:0x00000000	0	UNCONNECTED	filter_type=socket_filter,bpf_filter_type=cBPF

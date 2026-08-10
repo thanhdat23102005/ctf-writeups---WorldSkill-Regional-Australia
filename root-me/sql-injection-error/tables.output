@@ -1,0 +1,7 @@
+[*] 3 tables
+  ['u']  ['us']  ['use']  ['user']  ['users']
+[+] table[0] = users
+  ['s']  ['sq']  ['sql']  ['sqli']  ['sqlit']  ['sqlite']  ['sqlite_']  ['sqlite_s']  ['sqlite_se']  ['sqlite_seq']  ['sqlite_sequ']  ['sqlite_seque']  ['sqlite_sequen']  ['sqlite_sequenc']  ['sqlite_sequence']
+[+] table[1] = sqlite_sequence
+  ['m']  ['mo']  ['mov']  ['movi']  ['movie']  ['movies']
+[+] table[2] = movies

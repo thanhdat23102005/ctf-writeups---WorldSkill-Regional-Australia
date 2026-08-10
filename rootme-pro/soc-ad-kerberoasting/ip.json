@@ -1,0 +1,1 @@
+{"id":"indexp-be447e0099b7-winlogbeat","type":"index-pattern","namespaces":["default"],"updated_at":"2025-10-30T00:02:29.255Z","version":"WzAsMV0=","attributes":{"title":"index-be447e0099b7-winlogbeat","timeFieldName":"@timestamp"},"references":[],"migrationVersion":{"index-pattern":"7.6.0"}}

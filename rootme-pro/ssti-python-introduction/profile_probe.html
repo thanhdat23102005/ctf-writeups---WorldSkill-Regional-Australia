@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SSTI - Python - Introduction</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/profile-spacing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="/static/icon/favicon.ico">
+    
+</head>
+<body class="d-flex flex-column min-vh-100 mobile-container">
+    <div class="app-wrapper">
+    <div id="main" class="container d-flex flex-column px-0">
+        <div id="banner" class="d-flex justify-content-between align-items-center mt-2 border border-1 border-start-0 border-end-0">
+            <div class="d-flex justify-content-start">
+                <div class="triangle triangle-left"></div>
+                <div class="parallelogram"></div>
+            </div>
+            <h1>RMeet</h1>
+            <div class="d-flex justify-content-end align-items-center">
+                <div class="parallelogram"></div>
+                <div class="triangle triangle-right"></div>
+            </div>
+        </div>
+        
+        
+            
+        
+        
+        
+<div class="container px-4">
+    <div class="profile-header">
+        <div class="profile-pic-container">
+            <img src="/static/img/profiles/default.jpg" alt="AAA{{7*7}}AAA" class="profile-avatar">
+            
+        </div>
+        <h3 class="mb-1">AAA{{7*7}}AAA</h3>
+        <p class="text-muted mb-3">@pauk01</p>
+        
+        
+        <button class="btn btn-outline-danger" id="toggleEditBtn">
+            <i class="fas fa-edit"></i> Edit Profile
+        </button>
+        
+    </div>
+    
+    
+    <div class="profile-section" id="editProfileForm" style="display: none;">
+        <h3>Edit Profile</h3>
+        <form method="POST" action="/profile/pauk01" enctype="multipart/form-data">
+            <input id="csrf_token" name="csrf_token" type="hidden" value="ImEzYTU4ZTE4Yjg2N2YyYzgzYzU5ZGMzYTg2ODZjOTM5MDAyZGY0ODci.anlRow._nXS34-1ezHmc4ZiyOfAmBW7MlU">
+            
+            <div class="mb-3">
+                <label class="form-label" for="profile_pic">Update Profile Picture</label>
+                <input class="form-control" id="profile_pic" name="profile_pic" type="file">
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="full_name">Full Name</label>
+                <input class="form-control" id="full_name" maxlength="100" minlength="2" name="full_name" required type="text" value="AAA{{7*7}}AAA">
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="age">Age</label>
+                    <input class="form-control" id="age" max="120" min="18" name="age" required type="number" value="30">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label class="form-label" for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender" required><option value="">Select Gender</option><option selected value="Male">Male</option><option value="Female">Female</option><option value="Other">Other</option></select>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" id="location" maxlength="100" name="location" required type="text" value="BBB{{7*7}}BBB">
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="bio">Bio</label>
+                <textarea class="form-control" id="bio" maxlength="500" minlength="10" name="bio" required rows="4">
+CCC{{7*7}}CCC padding text here</textarea>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="interests">Interests (comma separated)</label>
+                <input class="form-control" id="interests" maxlength="200" name="interests" required type="text" value="DDD{{7*7}}DDD">
+                <small class="form-text text-muted">Separate interests with commas (e.g. music, hiking, cooking)</small>
+            </div>
+            
+            <div class="row mb-3 sticky-bottom" style="position: sticky; bottom: 0; background-color: white; padding-top: 10px; border-top: 1px solid #eee; z-index: 100;">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-danger btn-sm w-100">Save Changes</button>
+                </div>
+                <div class="col-6">
+                    <button type="button" class="btn btn-outline-secondary btn-sm w-100" id="cancelEditBtn">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    
+    <div id="profileView">
+        <div class="profile-section">
+            <h3>About Me</h3>
+            <div class="row">
+                <div class="col-6">
+                    <p><i class="fas fa-birthday-cake text-danger mr-2"></i> 30 years old</p>
+                </div>
+                <div class="col-6">
+                    <p><i class="fas fa-map-marker-alt text-danger mr-2"></i> BBB{{7*7}}BBB</p>
+                </div>
+            </div>
+            <p class="mt-3">CCC{{7*7}}CCC padding text here</p>
+        </div>
+        
+        
+        <div class="profile-section">
+            <h3>Interests</h3>
+            <div>
+                
+                <span class="interest-tag">DDD{{7*7}}DDD</span>
+                
+            </div>
+        </div>
+        
+        
+        <div class="profile-section">
+            <h3>Photos</h3>
+            <div class="row">
+                
+                    <div class="col-12">
+                        <p class="text-muted">No additional photos available.</p>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+        <nav class="mobile-nav fixed-bottom-nav">
+            <div class="container">
+                <div class="d-flex justify-content-around">
+                    <a href="/swipe" class="nav-link ">
+                        <i class="fas fa-fire"></i>
+                        <span>Swipe</span>
+                    </a>
+                    <a href="/matches" class="nav-link ">
+                        <i class="fas fa-heart"></i>
+                        <span>Matches</span>
+                    </a>
+                    <a href="/profile/pauk01" class="nav-link active">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                    <a href="/photos" class="nav-link ">
+                        <i class="fas fa-images"></i>
+                        <span>Photos</span>
+                    </a>
+                    <a href="/logout" class="nav-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+    </div>
+    
+    
+    
+    <script src="/static/js/bootstrap.js"></script>
+    
+    <script nonce="" src="/config.js"></script>
+    
+    
+    
+    
+    
+    
+    <script src="/static/js/profile.js"></script>
+    
+    </div>
+</body>
+</html>

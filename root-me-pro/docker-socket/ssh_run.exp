@@ -1,0 +1,7 @@
+#!/usr/bin/expect -f
+set timeout 20
+set cmd [lindex $argv 0]
+spawn ssh -p 32494 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null srv@sockets.challenges.root-me.pro $cmd
+expect "password:"
+send "Gj5ZUh^KZ6B@jknq@qf@\r"
+expect eof

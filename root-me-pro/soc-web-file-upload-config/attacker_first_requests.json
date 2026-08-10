@@ -1,0 +1,139 @@
+{
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 4801,
+            "relation": "eq"
+        },
+        "max_score": null,
+        "hits": [
+            {
+                "_index": "index-80261c659cc3-apache",
+                "_id": "M2VwKZkBZaBg3a1s3hai",
+                "_score": null,
+                "_source": {
+                    "@timestamp": "2025-09-08T13:08:03.522502Z",
+                    "log": "106.33.14.71 - - [08/Sep/2025:15:08:03 +0200] \"GET /phpinfo.php HTTP/1.1\" 200 73738 \"-\" \"curl/7.88.1\"",
+                    "tag": "apache-access",
+                    "request": "/phpinfo.php",
+                    "referrer": "-",
+                    "agent": "curl/7.88.1",
+                    "auth": "-",
+                    "ident": false,
+                    "response": 200,
+                    "bytes": 73738,
+                    "clientip": "106.33.14.71",
+                    "verb": "GET",
+                    "httpversion": 1.1,
+                    "apache_timestamp": 1757336883
+                },
+                "sort": [
+                    1757336883522
+                ]
+            },
+            {
+                "_index": "index-80261c659cc3-apache",
+                "_id": "EmVxKZkBZaBg3a1s2Bef",
+                "_score": null,
+                "_source": {
+                    "@timestamp": "2025-09-08T13:08:26.673357Z",
+                    "log": "106.33.14.71 - - [08/Sep/2025:15:08:26 +0200] \"GET /phpinfo.php HTTP/1.1\" 200 22431 \"-\" \"Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0\"",
+                    "tag": "apache-access",
+                    "request": "/phpinfo.php",
+                    "referrer": "-",
+                    "agent": "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0",
+                    "auth": "-",
+                    "ident": false,
+                    "response": 200,
+                    "bytes": 22431,
+                    "clientip": "106.33.14.71",
+                    "verb": "GET",
+                    "httpversion": 1.1,
+                    "apache_timestamp": 1757336906
+                },
+                "sort": [
+                    1757336906673
+                ]
+            },
+            {
+                "_index": "index-80261c659cc3-apache",
+                "_id": "72VyKZkBZaBg3a1sxxgb",
+                "_score": null,
+                "_source": {
+                    "@timestamp": "2025-09-08T13:09:20.360266Z",
+                    "log": "106.33.14.71 - - [08/Sep/2025:15:09:20 +0200] \"GET / HTTP/1.1\" 200 2385 \"-\" \"Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0\"",
+                    "tag": "apache-access",
+                    "request": "/",
+                    "referrer": "-",
+                    "agent": "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0",
+                    "auth": "-",
+                    "ident": false,
+                    "response": 200,
+                    "bytes": 2385,
+                    "clientip": "106.33.14.71",
+                    "verb": "GET",
+                    "httpversion": 1.1,
+                    "apache_timestamp": 1757336960
+                },
+                "sort": [
+                    1757336960360
+                ]
+            },
+            {
+                "_index": "index-80261c659cc3-apache",
+                "_id": "VmVyKZkBZaBg3a1sxxkb",
+                "_score": null,
+                "_source": {
+                    "@timestamp": "2025-09-08T13:09:32.401452Z",
+                    "log": "106.33.14.71 - - [08/Sep/2025:15:09:32 +0200] \"GET /.bash_history HTTP/1.1\" 403 344 \"-\" \"Mozilla/5.0 Firefox/126.0\"",
+                    "tag": "apache-access",
+                    "request": "/.bash_history",
+                    "referrer": "-",
+                    "agent": "Mozilla/5.0 Firefox/126.0",
+                    "auth": "-",
+                    "ident": false,
+                    "response": 403,
+                    "bytes": 344,
+                    "clientip": "106.33.14.71",
+                    "verb": "GET",
+                    "httpversion": 1.1,
+                    "apache_timestamp": 1757336972
+                },
+                "sort": [
+                    1757336972401
+                ]
+            },
+            {
+                "_index": "index-80261c659cc3-apache",
+                "_id": "V2VyKZkBZaBg3a1sxxkb",
+                "_score": null,
+                "_source": {
+                    "@timestamp": "2025-09-08T13:09:32.411531Z",
+                    "log": "106.33.14.71 - - [08/Sep/2025:15:09:32 +0200] \"GET /.bashrc HTTP/1.1\" 403 344 \"-\" \"Mozilla/5.0 Firefox/126.0\"",
+                    "tag": "apache-access",
+                    "request": "/.bashrc",
+                    "referrer": "-",
+                    "agent": "Mozilla/5.0 Firefox/126.0",
+                    "auth": "-",
+                    "ident": false,
+                    "response": 403,
+                    "bytes": 344,
+                    "clientip": "106.33.14.71",
+                    "verb": "GET",
+                    "httpversion": 1.1,
+                    "apache_timestamp": 1757336972
+                },
+                "sort": [
+                    1757336972411
+                ]
+            }
+        ]
+    }
+}

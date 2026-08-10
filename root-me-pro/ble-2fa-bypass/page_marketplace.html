@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/static/bootstrap-5.2.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/custom/css/style.css">
+<link rel="icon" href="/static/icon/favicon.ico">
+<title>BLE - 2FA Bypass</title>
+</head>
+<body>
+    <div id="main" class="container">
+        <!-- Banner -->
+        <div id="banner" class="d-flex justify-content-between align-items-center mt-4 border border-1 border-start-0 border-end-0">
+    <div class="d-flex justify-content-start">
+        <div class="triangle triangle-left"></div>
+        <div class="parallelogram"></div>
+    </div>
+
+    <h1>Ninja Crypto Trading</h1>
+    <div class="d-flex justify-content-end">
+        <div class="parallelogram"></div>
+        <div class="triangle triangle-right"></div>
+    </div>
+</div>
+        <hr>
+            <!-- Navbar -->
+            
+        <!-- Navbar -->
+        <nav id="nav" class="nav nav-tabs nav-justified">
+            <a class="nav-link" href="/profile">My profile</a>
+            <a class="nav-link" href="/roles">The roles</a>
+            <a class="nav-link" href="/marketplace">The marketplace</a>
+            <a class="nav-link" href="/cart">My cart (0)</a>
+        </nav>
+
+        <!-- Content -->
+        <div id="content" class="p-4 border">
+            <div class="container-fluid">
+                <h2>Marketplace</h2>
+                <hr>
+
+                
+
+                <div>
+                    <h4 class="text-center">Buying crypto currencies:</h4>
+                    <table class="table" style="table-layout: fixed">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">Crypto Name</th>
+                                <th style="width: 20%;">Rating</th>
+                                <th >Quantity</th>
+                                <th style="position: sticky; right: 0; width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <form action="/cart" method="post">
+                                    <input type="hidden" name="crypto" value="ByteCoin" >
+                                    <th scope="row">ByteCoin</th>
+                                    <td>17.7$</td>
+                                    <td>
+                                        <div>
+                                            <div class="mx-1"><input type="number" name="quantity" class="form-control" value="0" min="0"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mx-1">
+                                            <button id="submit" type="submit" class="btn btn-rmp btn-rmp-secondary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </form>
+                            </tr>
+                            
+                            <tr>
+                                <form action="/cart" method="post">
+                                    <input type="hidden" name="crypto" value="RMBucks" >
+                                    <th scope="row">RMBucks</th>
+                                    <td>3.1$</td>
+                                    <td>
+                                        <div>
+                                            <div class="mx-1"><input type="number" name="quantity" class="form-control" value="0" min="0"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mx-1">
+                                            <button id="submit" type="submit" class="btn btn-rmp btn-rmp-secondary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </form>
+                            </tr>
+                            
+                            <tr>
+                                <form action="/cart" method="post">
+                                    <input type="hidden" name="crypto" value="Spiperum" >
+                                    <th scope="row">Spiperum</th>
+                                    <td>9.11$</td>
+                                    <td>
+                                        <div>
+                                            <div class="mx-1"><input type="number" name="quantity" class="form-control" value="0" min="0"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mx-1">
+                                            <button id="submit" type="submit" class="btn btn-rmp btn-rmp-secondary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </form>
+                            </tr>
+                            
+                            <tr>
+                                <form action="/cart" method="post">
+                                    <input type="hidden" name="crypto" value="NitheraxDouz" >
+                                    <th scope="row">NitheraxDouz</th>
+                                    <td>1.1$</td>
+                                    <td>
+                                        <div>
+                                            <div class="mx-1"><input type="number" name="quantity" class="form-control" value="0" min="0"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mx-1">
+                                            <button id="submit" type="submit" class="btn btn-rmp btn-rmp-secondary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </form>
+                            </tr>
+                            
+                            <tr>
+                                <form action="/cart" method="post">
+                                    <input type="hidden" name="crypto" value="CanYouRUnit" >
+                                    <th scope="row">CanYouRUnit</th>
+                                    <td>31.96$</td>
+                                    <td>
+                                        <div>
+                                            <div class="mx-1"><input type="number" name="quantity" class="form-control" value="0" min="0"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mx-1">
+                                            <button id="submit" type="submit" class="btn btn-rmp btn-rmp-secondary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </form>
+                            </tr>
+                            
+                            <tr>
+                                <form action="/cart" method="post">
+                                    <input type="hidden" name="crypto" value="Digicoin" >
+                                    <th scope="row">Digicoin</th>
+                                    <td>79.4$</td>
+                                    <td>
+                                        <div>
+                                            <div class="mx-1"><input type="number" name="quantity" class="form-control" value="0" min="0"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mx-1">
+                                            <button id="submit" type="submit" class="btn btn-rmp btn-rmp-secondary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </form>
+                            </tr>
+                            
+                            <tr>
+                                <form action="/cart" method="post">
+                                    <input type="hidden" name="crypto" value="OneCoinToCoinThemAll" >
+                                    <th scope="row">OneCoinToCoinThemAll</th>
+                                    <td>33.9$</td>
+                                    <td>
+                                        <div>
+                                            <div class="mx-1"><input type="number" name="quantity" class="form-control" value="0" min="0"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="mx-1">
+                                            <button id="submit" type="submit" class="btn btn-rmp btn-rmp-secondary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+                                                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </form>
+                            </tr>
+                            
+                            <tr class="text-center">
+                                <td colspan="4"><code>More cryptocurrencies are coming soon...</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center p-4 mt-4 border">
+    <p class="mb-0">
+        <img src="/static/images/RMP_logo.png" alt="RMP Logo" class="rounded float-left" style="width: 3%;">
+        Copyrights © 2025 - Root-Me PRO - all rights reserved
+    </p>
+</footer>
+    </div>
+</body>
+
+<!-- Scripts -->
+<script src="/static/bootstrap-5.2.3/js/bootstrap.min.js"></script>
+<script src="/static/custom/js/script.js"></script>
+
+</html>
