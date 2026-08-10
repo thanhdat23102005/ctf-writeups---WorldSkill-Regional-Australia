@@ -1,0 +1,5 @@
+forum                (Status: 200) [Size: 8379]
+login                (Status: 200) [Size: 4333]
+logout               (Status: 302) [Size: 199] [--> /login]
+profile              (Status: 302) [Size: 199] [--> /login]
+register             (Status: 200) [Size: 2371]

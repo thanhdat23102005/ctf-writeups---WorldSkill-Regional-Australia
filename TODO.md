@@ -22,7 +22,7 @@
 
 - [ ] root-me-pro/ssti-python-filter-bypass — scripts only, no notes yet
 - [x] root-me-pro/ssti-python-introduction — done
-- [ ] root-me-pro/disk-analysis-windows-registers — files extracted, nothing written
+- [x] root-me-pro/disk-analysis-windows-registers — done (reconstructed from transcripts 2026-08-10)
 
 ## Housekeeping
 

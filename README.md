@@ -1,6 +1,6 @@
 # CTF archive — Root-Me / Root-Me Pro
 
-28 challenges. **19 with full writeups**, 8 notes-only, 1 work-in-progress.
+30 challenges. **20 with full writeups**, 9 notes-only, 1 work-in-progress.
 
 Each folder holds `notes.md` (running log), `writeup.md` (final self-contained writeup),
 and any `solve.py` / helper scripts. Where a challenge was solved across two sessions the
@@ -15,7 +15,7 @@ to regenerate them.
 | [`analyse-pcap-iot-rtp-video-capture`](root-me-pro/analyse-pcap-iot-rtp-video-capture/) | 📝 notes only | Network | 500 |
 | [`api-mass-assignment`](root-me-pro/api-mass-assignment/) | ✅ done | Web | 200 |
 | [`ble-2fa-bypass`](root-me-pro/ble-2fa-bypass/) | ✅ done | Web | 450 |
-| [`disk-analysis-windows-registers`](root-me-pro/disk-analysis-windows-registers/) | 🚧 WIP |  |  |
+| [`disk-analysis-windows-registers`](root-me-pro/disk-analysis-windows-registers/) | ✅ done | Forensic |  |
 | [`docker-socket`](root-me-pro/docker-socket/) | ✅ done | Soc |  |
 | [`encryption-known-plaintext2`](root-me-pro/encryption-known-plaintext2/) | ✅ done | cryption | 150 |
 | [`encryption-symmetric-bf`](root-me-pro/encryption-symmetric-bf/) | ✅ done | cryption |  |
@@ -37,6 +37,8 @@ to regenerate them.
 | [`sql-injection-error`](root-me-pro/sql-injection-error/) | ✅ done | Web | 400 |
 | [`ssti-python-filter-bypass`](root-me-pro/ssti-python-filter-bypass/) | ✅ done | Web | 450 |
 | [`ssti-python-introduction`](root-me-pro/ssti-python-introduction/) | ✅ done | Web | 300 |
+| [`web-cache-poisoning-unkeyed-header`](root-me-pro/web-cache-poisoning-unkeyed-header/) | 🚧 WIP |  |  |
+| [`xss-reflected-uri`](root-me-pro/xss-reflected-uri/) | 📝 notes only | Web | 450 |
 
 ## Root-Me
 
