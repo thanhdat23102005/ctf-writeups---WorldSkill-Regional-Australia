@@ -49,7 +49,3 @@ writeup for how to regenerate them.
 | [`ch2-command-control-2`](root-me/ch2-command-control-2/) | ✅ done | Forensic |  |
 | [`ch39-deleted-file`](root-me/ch39-deleted-file/) | ✅ done | Forensic |  |
 
----
-
-**Private repo** — contains working flags and solutions for challenges that are still live.
-Not to be published: Root-Me's rules prohibit public disclosure of solutions.
